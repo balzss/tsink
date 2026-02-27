@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { requestLogin } from '@/api/google-auth'
 import { useSettingsStore } from '@/stores/settings-store'
 import { Button } from '@/components/ui/button'
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 export function LoginScreen() {
   const { t, i18n } = useTranslation()
@@ -29,12 +29,15 @@ export function LoginScreen() {
           {t('login.signIn')}
         </Button>
         <p className="text-xs text-white/50">{t('login.description')}</p>
-        <Tabs value={i18n.language} onValueChange={handleLanguageChange}>
-          <TabsList>
-            <TabsTrigger value="en">English</TabsTrigger>
-            <TabsTrigger value="hu">Magyar</TabsTrigger>
-          </TabsList>
-        </Tabs>
+        <Select value={i18n.language} onValueChange={handleLanguageChange}>
+          <SelectTrigger className="w-full bg-white/20 border-white/30 text-white">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="en">English</SelectItem>
+            <SelectItem value="hu">Magyar</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
     </div>
   )

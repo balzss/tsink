@@ -82,7 +82,7 @@ export function DatePicker({ value, onChange, open, onClose, markedDates }: Date
   return (
     <div
       ref={ref}
-      className="absolute left-1/2 top-full z-50 mt-2 w-72 -translate-x-1/2 rounded-xl glass-card p-3 shadow-xl"
+      className="absolute left-1/2 top-full z-50 mt-2 w-72 -translate-x-1/2 rounded-xl bg-white/90 dark:bg-primary-950/90 backdrop-blur-xl border border-primary-200/50 dark:border-primary-700/50 p-3 shadow-xl"
     >
       <div className="mb-2 flex items-center justify-between">
         <button

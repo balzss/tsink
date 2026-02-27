@@ -79,9 +79,9 @@ export function AppShell() {
   if (!spreadsheetId) return <SetupWizard />
 
   return (
-    <div className="mx-auto flex h-full w-full max-w-2xl flex-col">
+    <div className="flex h-full w-full flex-col">
       <TopBar />
-      <main className="flex-1 overflow-y-auto">
+      <main className="mx-auto flex-1 w-full max-w-2xl overflow-y-auto">
         {tabComponents[activeTab]?.()}
       </main>
       <BottomNav />

@@ -83,16 +83,16 @@ export function SpreadsheetPicker({ onSelect }: SpreadsheetPickerProps) {
   }
 
   return (
-    <div className="w-full max-w-sm space-y-4">
+    <div className="w-full space-y-4">
       <Tabs defaultValue="browse">
         <TabsList className="w-full">
-          <TabsTrigger value="browse" className="flex-1">
-            <FileSpreadsheet size={14} className="mr-1" />
-            {t('setup.browseExisting')}
+          <TabsTrigger value="browse" className="flex-1 min-w-0 truncate">
+            <FileSpreadsheet size={14} className="mr-1 shrink-0" />
+            <span className="truncate">{t('setup.browseExisting')}</span>
           </TabsTrigger>
-          <TabsTrigger value="paste" className="flex-1">
-            <Link size={14} className="mr-1" />
-            {t('setup.pasteUrl')}
+          <TabsTrigger value="paste" className="flex-1 min-w-0 truncate">
+            <Link size={14} className="mr-1 shrink-0" />
+            <span className="truncate">{t('setup.pasteUrl')}</span>
           </TabsTrigger>
         </TabsList>
         <TabsContent value="browse">
@@ -145,10 +145,10 @@ export function SpreadsheetPicker({ onSelect }: SpreadsheetPickerProps) {
         </TabsContent>
       </Tabs>
 
-      <div className="flex items-center gap-3 text-sm text-primary-600">
-        <div className="h-px flex-1 bg-primary-200 dark:bg-primary-700" />
+      <div className="flex items-center gap-3 text-sm text-primary-900 dark:text-primary-200">
+        <div className="h-px flex-1 bg-primary-300 dark:bg-primary-600" />
         {t('setup.orCreate')}
-        <div className="h-px flex-1 bg-primary-200 dark:bg-primary-700" />
+        <div className="h-px flex-1 bg-primary-300 dark:bg-primary-600" />
       </div>
 
       <Button variant="secondary" className="w-full" onClick={handleCreate} disabled={creating}>

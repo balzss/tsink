@@ -10,7 +10,6 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { SpreadsheetPicker } from '@/components/ui/SpreadsheetPicker'
 import { CURRENCIES } from '@/utils/currency'
 import { LogOut, Plus, X, Download, Upload, FileSpreadsheet } from 'lucide-react'
@@ -144,24 +143,30 @@ export function SettingsView() {
         </h2>
         <Card>
           <CardContent className="p-4 space-y-4">
-            <div>
-              <Label className="mb-2">{t('settings.theme')}</Label>
-              <Tabs value={settings.theme} onValueChange={(value) => settings.setTheme(value as 'light' | 'dark' | 'system')}>
-                <TabsList className="w-full">
-                  <TabsTrigger value="light" className="flex-1">{t('settings.light')}</TabsTrigger>
-                  <TabsTrigger value="dark" className="flex-1">{t('settings.dark')}</TabsTrigger>
-                  <TabsTrigger value="system" className="flex-1">{t('settings.system')}</TabsTrigger>
-                </TabsList>
-              </Tabs>
+            <div className="flex flex-col gap-1">
+              <Label>{t('settings.theme')}</Label>
+              <Select value={settings.theme} onValueChange={(value) => settings.setTheme(value as 'light' | 'dark' | 'system')}>
+                <SelectTrigger className="w-full">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="light">{t('settings.light')}</SelectItem>
+                  <SelectItem value="dark">{t('settings.dark')}</SelectItem>
+                  <SelectItem value="system">{t('settings.system')}</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
-            <div>
-              <Label className="mb-2">{t('settings.language')}</Label>
-              <Tabs value={i18n.language} onValueChange={(value) => { settings.setLanguage(value); i18n.changeLanguage(value) }}>
-                <TabsList className="w-full">
-                  <TabsTrigger value="en" className="flex-1">English</TabsTrigger>
-                  <TabsTrigger value="hu" className="flex-1">Magyar</TabsTrigger>
-                </TabsList>
-              </Tabs>
+            <div className="flex flex-col gap-1">
+              <Label>{t('settings.language')}</Label>
+              <Select value={i18n.language} onValueChange={(value) => { settings.setLanguage(value); i18n.changeLanguage(value) }}>
+                <SelectTrigger className="w-full">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="en">English</SelectItem>
+                  <SelectItem value="hu">Magyar</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
           </CardContent>
         </Card>
@@ -209,7 +214,7 @@ export function SettingsView() {
                   onKeyDown={(e) => e.key === 'Enter' && handleAddCategory()}
                   className="flex-1"
                 />
-                <Button size="sm" onClick={handleAddCategory} disabled={!newCategory.trim()}>
+                <Button onClick={handleAddCategory} disabled={!newCategory.trim()}>
                   <Plus size={16} />
                 </Button>
               </div>
