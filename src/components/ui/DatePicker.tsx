@@ -82,7 +82,7 @@ export function DatePicker({ value, onChange, open, onClose, markedDates }: Date
   return (
     <div
       ref={ref}
-      className="absolute left-1/2 top-full z-50 mt-2 w-72 -translate-x-1/2 rounded-xl border border-primary-200 bg-white p-3 shadow-xl dark:border-primary-700 dark:bg-primary-900"
+      className="absolute left-1/2 top-full z-50 mt-2 w-72 -translate-x-1/2 rounded-xl glass-card p-3 shadow-xl"
     >
       <div className="mb-2 flex items-center justify-between">
         <button
@@ -107,7 +107,7 @@ export function DatePicker({ value, onChange, open, onClose, markedDates }: Date
 
       <div className="grid grid-cols-7 gap-0.5 text-center">
         {weekDays.map((d) => (
-          <div key={d} className="py-1 text-xs font-medium text-primary-400 dark:text-primary-500">
+          <div key={d} className="py-1 text-xs font-medium text-primary-600 dark:text-primary-500">
             {d}
           </div>
         ))}

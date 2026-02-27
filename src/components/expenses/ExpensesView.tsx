@@ -124,7 +124,7 @@ export function ExpensesView() {
         <>
           {recurring.length > 0 && (
             <section>
-              <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary-500 dark:text-primary-400">
+              <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">
                 {t('expenses.recurring')}
               </h2>
               <div className="flex flex-col gap-2">
@@ -140,7 +140,7 @@ export function ExpensesView() {
           )}
           {oneTime.length > 0 && (
             <section>
-              <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary-500 dark:text-primary-400">
+              <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">
                 {t('expenses.oneTime')}
               </h2>
               <div className="flex flex-col gap-2">

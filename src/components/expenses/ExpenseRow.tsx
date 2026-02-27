@@ -21,18 +21,18 @@ export const ExpenseRowItem = memo(function ExpenseRowItem({ expense, onEdit }: 
             <div className="flex items-center gap-2">
               <span className="font-medium text-primary-900 dark:text-primary-100">{expense.name}</span>
               {expense.is_recurring && (
-                <Repeat size={14} className="text-primary-500 dark:text-primary-400" />
+                <Repeat size={14} className="text-primary-600 dark:text-primary-400" />
               )}
             </div>
             {expense.date && (
-              <p className="text-xs text-primary-400 dark:text-primary-500">{expense.date}</p>
+              <p className="text-xs text-primary-600 dark:text-primary-500">{expense.date}</p>
             )}
           </div>
           <div className="flex items-center gap-2">
             <span className="font-semibold text-primary-900 dark:text-primary-100">
               {formatCurrency(expense.amount, currency)}
             </span>
-            <Pencil size={14} className="text-primary-400" />
+            <Pencil size={14} className="text-primary-500" />
           </div>
         </div>
       </CardContent>

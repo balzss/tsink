@@ -73,11 +73,11 @@ export function InlineEventCard({ event, incomeEntry, categories, date }: Inline
   const availableCategories = categories.filter((c) => !selectedCategories.includes(c))
 
   return (
-    <div className={`rounded-lg border border-primary-200 bg-white p-3 dark:border-primary-700 dark:bg-primary-800 ${isSkipped ? 'opacity-50' : ''}`}>
+    <div className={`rounded-xl glass-card p-3 ${isSkipped ? 'opacity-50' : ''}`}>
       <div className="flex items-center justify-between gap-2 mb-2">
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-medium text-primary-900 dark:text-primary-100">{event.summary}</p>
-          <p className="text-xs text-primary-500 dark:text-primary-400">
+          <p className="text-xs text-primary-600 dark:text-primary-400">
             {formatTime(event.start)} – {formatTime(event.end)} · {formatDuration(duration)}
           </p>
         </div>

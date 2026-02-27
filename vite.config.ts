@@ -15,8 +15,8 @@ export default defineConfig({
         name: 'tsink',
         short_name: 'tsink',
         description: 'Track work hours, income, and expenses',
-        theme_color: '#18181b',
-        background_color: '#ffffff',
+        theme_color: '#059669',
+        background_color: '#ecfdf5',
         display: 'standalone',
         icons: [
           { src: '/icon-192.png', sizes: '192x192', type: 'image/png' },

@@ -102,7 +102,7 @@ export function SpreadsheetPicker({ onSelect }: SpreadsheetPickerProps) {
                 <Spinner />
               </div>
             ) : files.length === 0 ? (
-              <p className="py-4 text-center text-sm text-primary-500 dark:text-primary-400">
+              <p className="py-4 text-center text-sm text-primary-600 dark:text-primary-400">
                 {t('setup.noSpreadsheets')}
               </p>
             ) : (
@@ -111,14 +111,14 @@ export function SpreadsheetPicker({ onSelect }: SpreadsheetPickerProps) {
                   <button
                     key={file.id}
                     onClick={() => onSelect(file.id)}
-                    className="flex w-full items-center gap-3 rounded-lg border border-primary-200 bg-white p-3 text-left transition-colors hover:border-primary-400 hover:bg-primary-50 dark:border-primary-700 dark:bg-primary-800 dark:hover:border-primary-600 dark:hover:bg-primary-800/80"
+                    className="flex w-full items-center gap-3 rounded-xl border border-primary-200 bg-white p-3 text-left transition-colors hover:border-primary-400 hover:bg-primary-50 dark:border-primary-700 dark:bg-primary-800 dark:hover:border-primary-600 dark:hover:bg-primary-800/80"
                   >
                     <FileSpreadsheet size={18} className="shrink-0 text-primary-600 dark:text-primary-400" />
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-medium text-primary-900 dark:text-primary-100">
                         {file.name}
                       </p>
-                      <p className="text-xs text-primary-400 dark:text-primary-500">
+                      <p className="text-xs text-primary-600 dark:text-primary-500">
                         {formatDate(file.modifiedTime)}
                       </p>
                     </div>
@@ -145,7 +145,7 @@ export function SpreadsheetPicker({ onSelect }: SpreadsheetPickerProps) {
         </TabsContent>
       </Tabs>
 
-      <div className="flex items-center gap-3 text-sm text-primary-400">
+      <div className="flex items-center gap-3 text-sm text-primary-600">
         <div className="h-px flex-1 bg-primary-200 dark:bg-primary-700" />
         {t('setup.orCreate')}
         <div className="h-px flex-1 bg-primary-200 dark:bg-primary-700" />

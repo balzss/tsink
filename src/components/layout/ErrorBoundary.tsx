@@ -28,7 +28,7 @@ export class ErrorBoundary extends Component<Props, State> {
           <p className="text-lg font-semibold text-primary-900 dark:text-primary-100">
             Something went wrong
           </p>
-          <p className="text-sm text-primary-500 dark:text-primary-400">
+          <p className="text-sm text-primary-600 dark:text-primary-400">
             {this.state.error?.message}
           </p>
           <Button onClick={() => window.location.reload()}>

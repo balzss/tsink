@@ -117,7 +117,7 @@ export const EventCard = memo(function EventCard({ event, incomeEntry, categorie
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0 flex-1">
             <p className="truncate font-medium text-primary-900 dark:text-primary-100">{event.summary}</p>
-            <p className="text-sm text-primary-500 dark:text-primary-400">
+            <p className="text-sm text-primary-600 dark:text-primary-400">
               {formatTime(event.start)} – {formatTime(event.end)} · {formatDuration(duration)}
             </p>
           </div>
@@ -133,7 +133,7 @@ export const EventCard = memo(function EventCard({ event, incomeEntry, categorie
         {!isSkipped && (
           <div className="mt-3 space-y-2">
             <div>
-              <Label className="mb-1 text-xs text-primary-500 dark:text-primary-400">
+              <Label className="mb-1 text-xs text-primary-600 dark:text-primary-400">
                 {t('workHours.amount')} ({getCurrencySymbol(currency)})
               </Label>
               <Input
@@ -145,7 +145,7 @@ export const EventCard = memo(function EventCard({ event, incomeEntry, categorie
               />
             </div>
             <div className="relative" ref={dropdownRef}>
-              <Label className="mb-1 text-xs text-primary-500 dark:text-primary-400">
+              <Label className="mb-1 text-xs text-primary-600 dark:text-primary-400">
                 {t('workHours.category')}
               </Label>
               {selectedCategories.length > 0 && (
@@ -159,7 +159,7 @@ export const EventCard = memo(function EventCard({ event, incomeEntry, categorie
                       <button
                         type="button"
                         onClick={() => removeCategory(cat)}
-                        className="text-primary-500 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-200"
+                        className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-200"
                       >
                         <X size={12} />
                       </button>

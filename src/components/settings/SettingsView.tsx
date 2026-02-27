@@ -83,7 +83,7 @@ export function SettingsView() {
   return (
     <div className="flex flex-col gap-6 p-4 pb-8">
       <section>
-        <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary-500 dark:text-primary-400">
+        <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">
           {t('settings.account')}
         </h2>
         <Card>
@@ -94,7 +94,7 @@ export function SettingsView() {
               )}
               <div className="flex-1 min-w-0">
                 <p className="truncate font-medium text-primary-900 dark:text-primary-100">{user?.name}</p>
-                <p className="truncate text-sm text-primary-500 dark:text-primary-400">{user?.email}</p>
+                <p className="truncate text-sm text-primary-600 dark:text-primary-400">{user?.email}</p>
               </div>
               <Button variant="ghost" size="sm" onClick={logout}>
                 <LogOut size={16} className="mr-1" /> {t('settings.signOut')}
@@ -105,7 +105,7 @@ export function SettingsView() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary-500 dark:text-primary-400">
+        <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">
           {t('settings.spreadsheet')}
         </h2>
         <Card>
@@ -139,7 +139,7 @@ export function SettingsView() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary-500 dark:text-primary-400">
+        <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">
           {t('settings.appearance')}
         </h2>
         <Card>
@@ -168,7 +168,7 @@ export function SettingsView() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary-500 dark:text-primary-400">
+        <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">
           {t('settings.data')}
         </h2>
         <Card>
@@ -195,7 +195,7 @@ export function SettingsView() {
                     className="inline-flex items-center gap-1 rounded-full bg-primary-100 px-3 py-1 text-sm dark:bg-primary-800"
                   >
                     {cat}
-                    <button onClick={() => handleRemoveCategory(cat)} className="text-primary-400 hover:text-primary-600">
+                    <button onClick={() => handleRemoveCategory(cat)} className="text-primary-500 hover:text-primary-700">
                       <X size={14} />
                     </button>
                   </span>

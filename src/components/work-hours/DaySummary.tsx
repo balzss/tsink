@@ -11,7 +11,7 @@ export function DaySummary({ total }: DaySummaryProps) {
   const currency = useSettingsStore((s) => s.currency)
 
   return (
-    <div className="flex items-center justify-between rounded-xl bg-primary-100 p-4 dark:bg-primary-800">
+    <div className="flex items-center justify-between rounded-xl gradient-emerald-subtle border border-primary-200 dark:border-primary-700 p-4">
       <span className="font-medium text-primary-800 dark:text-primary-200">
         {t('workHours.daySummary')}
       </span>

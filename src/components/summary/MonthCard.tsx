@@ -25,7 +25,7 @@ export function MonthCard({ month, categories }: MonthCardProps) {
         <h3 className="text-base font-semibold text-primary-900 dark:text-primary-100 capitalize">
           {month.label}
           {month.isCurrentMonth && (
-            <span className="ml-2 text-xs font-normal text-primary-400 dark:text-primary-500">
+            <span className="ml-2 text-xs font-normal text-primary-600 dark:text-primary-500">
               ({t('summary.currentMonth')})
             </span>
           )}
@@ -33,25 +33,25 @@ export function MonthCard({ month, categories }: MonthCardProps) {
 
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <p className="text-xs text-primary-500 dark:text-primary-400">{t('summary.hoursWorked')}</p>
+            <p className="text-xs text-primary-600 dark:text-primary-400">{t('summary.hoursWorked')}</p>
             <p className="text-lg font-bold text-primary-900 dark:text-primary-100">{month.hoursWorked}h</p>
           </div>
           <div>
-            <p className="text-xs text-primary-500 dark:text-primary-400">{t('summary.daysWorked')}</p>
+            <p className="text-xs text-primary-600 dark:text-primary-400">{t('summary.daysWorked')}</p>
             <p className="text-lg font-bold text-primary-900 dark:text-primary-100">{month.daysWorked}</p>
           </div>
           <div>
-            <p className="text-xs text-primary-500 dark:text-primary-400">{t('summary.totalIncome')}</p>
+            <p className="text-xs text-primary-600 dark:text-primary-400">{t('summary.totalIncome')}</p>
             <p className="text-lg font-bold text-primary-900 dark:text-primary-100">
               {formatCurrency(month.totalIncome, currency)}
             </p>
           </div>
           {!month.isCurrentMonth && (
             <div>
-              <p className="text-xs text-primary-500 dark:text-primary-400">{t('summary.profit')}</p>
+              <p className="text-xs text-primary-600 dark:text-primary-400">{t('summary.profit')}</p>
               <p className={`text-lg font-bold ${
                 month.profit >= 0
-                  ? 'text-green-700 dark:text-green-400'
+                  ? 'text-primary-700 dark:text-primary-400'
                   : 'text-red-600 dark:text-red-400'
               }`}>
                 {formatCurrency(month.profit, currency)}
@@ -61,13 +61,13 @@ export function MonthCard({ month, categories }: MonthCardProps) {
         </div>
 
         {month.incompleteDays.length > 0 && (
-          <div className="rounded-lg border border-primary-200 bg-primary-50 dark:border-primary-700 dark:bg-primary-800/50">
+          <div className="rounded-xl border border-primary-200 bg-primary-50 dark:border-primary-700 dark:bg-primary-800/50">
             <button
               onClick={() => setExpandedDay(expandedDay ? null : '__all__')}
               className="flex w-full items-center justify-between p-3"
             >
               <div className="flex items-center gap-2">
-                <AlertCircle size={14} className="text-primary-500 dark:text-primary-400" />
+                <AlertCircle size={14} className="text-primary-600 dark:text-primary-400" />
                 <span className="text-xs font-medium text-primary-700 dark:text-primary-300">
                   {t('summary.daysWithMissing', { count: month.incompleteDays.length })}
                 </span>
@@ -90,7 +90,7 @@ export function MonthCard({ month, categories }: MonthCardProps) {
                           day: 'numeric',
                         })}
                       </span>
-                      <span className="text-xs text-primary-500 dark:text-primary-400">
+                      <span className="text-xs text-primary-600 dark:text-primary-400">
                         {day.events.length} event{day.events.length > 1 ? 's' : ''}
                       </span>
                     </button>
@@ -116,7 +116,7 @@ export function MonthCard({ month, categories }: MonthCardProps) {
         )}
 
         {month.incompleteDays.length === 0 && (
-          <p className="text-center text-xs text-primary-500 dark:text-primary-400">
+          <p className="text-center text-xs text-primary-600 dark:text-primary-400">
             {t('summary.noIncomplete')}
           </p>
         )}
